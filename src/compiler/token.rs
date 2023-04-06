@@ -1,6 +1,6 @@
 use phf::phf_map;
 
-#[derive(Clone, Debug)]
+#[derive(PartialEq, Clone, Debug)]
 pub enum TokenType {
     Ident(String),
     Number(u32),
@@ -35,7 +35,7 @@ pub enum TokenType {
     Exclamation
 }
 
-#[derive(Debug)]
+#[derive(PartialEq, Debug)]
 pub struct Token(pub TokenType);
 
 static KEYWORDS: phf::Map<&'static str, TokenType> = phf_map! {
